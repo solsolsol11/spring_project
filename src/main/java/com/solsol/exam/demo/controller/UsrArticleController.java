@@ -1,25 +1,31 @@
 package com.solsol.exam.demo.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.solsol.exam.demo.service.ArticleService;
 import com.solsol.exam.demo.vo.Article;
 
 @Controller
 public class UsrArticleController {
+	
+	
+	
 	// 인스턴스 변수 시작
+	@Autowired
+	private ArticleService articleService;
 	private int articlesLastId;
 	private List<Article> articles;
 	// 인스턴스 변수 끝
 
 	// 생성자
 	public UsrArticleController() {
+		
 		articlesLastId = 0;
 		articles = new ArrayList<>();
 
@@ -133,19 +139,6 @@ public class UsrArticleController {
 		return id + "번 게시물을 수정하였습니다.";
 	}
 
-	@RequestMapping("/usr/article/doModify")
-	@ResponseBody
-	public String doModify(int id, String title, String body) {
-		Article article = getArticle(id);
-
-		if (article == null) {
-			return id + "번 게시물이 존재하지 않습니다.";
-		}
-
-		modifyArticle(id, title, body);
-
-		return id + "번 게시물을 수정하였습니다.";
-	}
 
 	// 액션 메서드 끝
 }
