@@ -14,7 +14,7 @@ public interface ArticleRepository {
 	
 	public Article writeArticle(String title, String body);
 
-	// SELECT * FROM article WHERE id = ?
+	
 	@Select("select * from article where id = #{id}")
 	public Article getArticle(@Param("id")int id);
 
