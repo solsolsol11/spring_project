@@ -18,9 +18,15 @@ import com.solsol.exam.demo.vo.Article;
 @Controller
 public class UsrHomeController {
 	@RequestMapping("/usr/home/main")
-	@ResponseBody
-	public String getString() {
-		return "안녕하세요.";
+	
+	public String showMain() {
+		return "usr/home/main";
+	}
+	
+	@RequestMapping("/")
+	
+	public String getRoot() {
+		return "redirect:/usr/home/main";
 	}
 	
 }
