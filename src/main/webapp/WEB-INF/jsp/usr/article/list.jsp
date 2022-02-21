@@ -8,9 +8,20 @@
 <title>메인</title>
 </head>
 <body>
-  <h1>HI!</h1>
+  <h1>게시물 리스트 페이지</h1>
 
-  <hr />
+  <header>
+    <a href="/">로고</a>
+    <ul>
+      <li>
+        <a href="/">홈</a>
+      </li>
+      <li>
+        <a href="/usr/article/list">리스트</a>
+      </li>
+
+    </ul>
+  </header>
   <table border="1">
     <thead>
       <tr>
@@ -32,11 +43,11 @@
           <td>
             <a href="../article/detail?id=${ article.id }">${ article.title }</a>
           </td>
-        
-      </tr>
 
-    </c:forEach>
-  </tbody>
+        </tr>
+
+      </c:forEach>
+    </tbody>
   </table>
 </body>
 </html>
