@@ -3,7 +3,10 @@
 <c:set var="pageTitle" value="메인" />
 <%@ include file="../common/head.jspf" %>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur adipisci aperiam eligendi dolorem iusto tempora
-rerum ratione dolore sapiente in quo odit. Hic recusandae distinctio optio non excepturi quasi voluptatem.
+<section>
+  <div class="container mx-auto px-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatibus alias nostrum pariatur quisquam nemo laudantium tempore explicabo error quo soluta vero debitis aliquid obcaecati in dolores quibusdam fugiat vel.
+  </div>
+</section>
 
 <%@ include file="../common/foot.jspf" %>
