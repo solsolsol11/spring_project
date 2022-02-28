@@ -49,11 +49,7 @@
         <a class="btn-text-link" onclick="if( confirm('정말 삭제하시겠습니까?') == false ) return false;"
           href="../article/doDelete?id=${ article.id }">게시물 삭제</a>
       </c:if>
-=======
-    <button class="btn-text-link" type="button" onclick="history.back()">뒤로가기</button>
-    <a class="btn-text-link" href="../article/modify?id=${ article.id }">게시물 수정</a>
-    <a class="btn-text-link" onclick="if( confirm('정말 삭제하시겠습니까?') == false ) return false;" href="../article/doDelete?id=${ article.id }">게시물 삭제</a>
->>>>>>> 905309f384bf3f1b005fa78a6e26084dedd41053
+
     </div>
   </div>
 </section>
