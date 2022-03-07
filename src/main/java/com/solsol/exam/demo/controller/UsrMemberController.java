@@ -1,5 +1,6 @@
 package com.solsol.exam.demo.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import com.solsol.exam.demo.service.MemberService;
 import com.solsol.exam.demo.util.Ut;
 import com.solsol.exam.demo.vo.Member;
 import com.solsol.exam.demo.vo.ResultData;
+import com.solsol.exam.demo.vo.Rq;
 
 @Controller
 public class UsrMemberController {
@@ -88,14 +90,11 @@ public class UsrMemberController {
 	
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
-	public String doLogin(HttpSession httpSession, String loginId, String loginPw) {
-		boolean isLogined = false;
+	public String doLogin(HttpServletRequest req, String loginId, String loginPw) {
+		Rq rq = (Rq)req.getAttribute("rq");
 		
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-		}
 		
-		if(isLogined) {
+		if(rq.isLogined()) {
 			return Ut.jsHistoryBack("이미 로그인되었습니다.");
 			
 		}
@@ -120,7 +119,8 @@ public class UsrMemberController {
 			return Ut.jsHistoryBack("비밀번호가 일치하지 않습니다.");
 		}
 		
-		httpSession.setAttribute("loginedMemberId", member.getId());
+		
+		rq.login(member);
 		
 		return Ut.jsReplace(Ut.f("%s님 환영합니다.", member.getNickname()), "/");
 	}
