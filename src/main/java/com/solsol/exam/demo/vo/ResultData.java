@@ -1,6 +1,8 @@
 package com.solsol.exam.demo.vo;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 
 public class ResultData<DT> {
 	@Getter
@@ -12,9 +14,6 @@ public class ResultData<DT> {
 	@Getter
 	private DT data1;
 	
-	private ResultData() {
-		
-	}
 	
 	public static ResultData from(String resultCode, String msg) {
 		return from(resultCode, msg, null, null);
