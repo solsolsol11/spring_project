@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.solsol.exam.demo.vo.Article;
 
 
-
-
-
 @Controller
 public class UsrHomeController {
 	@RequestMapping("/usr/home/main")
