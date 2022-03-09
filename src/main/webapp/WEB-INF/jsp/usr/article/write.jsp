@@ -3,14 +3,7 @@
 
 <c:set var="pageTitle" value="게시물 작성" />
 <%@ include file="../common/head.jspf"%>
-<script>
-  function check(form) {
-    if ( form.boardId.value == 0 ) {
-      alert('게시판을 선택해주세요.');
-      return false;
-    }
-  }
-  </script>
+
 <section class="mt-5">
   <div class="container mx-auto px-3">
     <form onsubmit="check(this); return false;" class="table-box-type-1" method="POST" action="../article/doWrite">
