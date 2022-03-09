@@ -16,9 +16,11 @@ import com.solsol.exam.demo.vo.Rq;
 @Controller
 public class UsrMemberController {
 	private MemberService memberService;
+	private Rq rq;
 
-	public UsrMemberController(MemberService memberService) {
+	public UsrMemberController(MemberService memberService, Rq rq) {
 		this.memberService = memberService;
+		this.rq = rq;
 	}
 
 	@RequestMapping("/usr/member/doJoin")
@@ -64,8 +66,8 @@ public class UsrMemberController {
 	
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
-	public String doLogout(HttpServletRequest req) {
-		Rq rq = (Rq)req.getAttribute("rq");
+	public String doLogout() {
+		
 		
 		if(!rq.isLogined()) {
 			return rq.jsHistoryBack("이미 로그아웃 상태입니다.");
@@ -85,8 +87,7 @@ public class UsrMemberController {
 	
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
-	public String doLogin(HttpServletRequest req, String loginId, String loginPw) {
-		Rq rq = (Rq)req.getAttribute("rq");
+	public String doLogin(String loginId, String loginPw) {
 		
 		
 		if(rq.isLogined()) {
