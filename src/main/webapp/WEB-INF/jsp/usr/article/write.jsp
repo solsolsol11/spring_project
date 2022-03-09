@@ -3,9 +3,17 @@
 
 <c:set var="pageTitle" value="게시물 작성" />
 <%@ include file="../common/head.jspf"%>
+<script>
+  function check(form) {
+    if ( form.boardId.value == 0 ) {
+      alert('게시판을 선택해주세요.');
+      return false;
+    }
+  }
+  </script>
 <section class="mt-5">
   <div class="container mx-auto px-3">
-    <form class="table-box-type-1" method="POST" action="../article/doWrite">
+    <form onsubmit="check(this); return false;" class="table-box-type-1" method="POST" action="../article/doWrite">
       <input type="hidden" name="id" value="${article.id}"/>
       <table>
         <colgroup>
@@ -22,7 +30,7 @@
             <th>게시판</th>
             <td>
               <select class="select select-bordered" name="boardId">
-                <option selected disabled>게시판을 선택해주세요.</option>
+                <option value="0" selected disabled>게시판을 선택해주세요.</option>
                 <option value="1">공지</option>
                 <option value="2">자유</option>
               </select>
