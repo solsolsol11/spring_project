@@ -61,5 +61,7 @@
     </div>
   </div>
 </section>
-
+<!-- 
+<iframe src="http://localhost:8011/usr/article/doIncreaseHitCountRd?id=2" frameborder="0"></iframe>
+ -->
 <%@ include file="../common/foot.jspf"%>

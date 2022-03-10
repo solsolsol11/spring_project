@@ -144,3 +144,9 @@ select now(), NOW(), FLOOR(RAND() * 2) + 1, FLOOR(RAND() * 2) + 1, concat('제�
 from article;
 
 */
+
+# 게시물 테이블 hitCount 칼럼을 추가
+ALTER TABLE article
+ADD COLUMN hitCount INT(10) UNSIGNED NOT NULL DEFAULT 0;
+
+DESC article;
