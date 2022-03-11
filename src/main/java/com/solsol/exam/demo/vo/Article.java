@@ -16,10 +16,10 @@ public class Article {
 	private String updateDate;
 	private int memberId;
 	private int hitCount;
+	private int goodReactionPoint;
+	private int badReactionPoint;
 	
-	private int extra__sumReactionPoint;
-	private int extra__goodReactionPoint;
-	private int extra__badReactionPoint;
+	
 	private String extra__writerName;
 	private boolean extra__actorCanModify;
 	private boolean extra__actorCanDelete;
