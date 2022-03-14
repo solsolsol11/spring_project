@@ -48,3 +48,7 @@ html > body {
 body{
 	min-width : 800px ;
 }
+
+.table-1 tr:where(th,td){
+	vertical-align: top;
+}
