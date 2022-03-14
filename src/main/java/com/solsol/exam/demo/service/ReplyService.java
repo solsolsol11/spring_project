@@ -1,9 +1,13 @@
 package com.solsol.exam.demo.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.solsol.exam.demo.repository.ReplyRepository;
 import com.solsol.exam.demo.util.Ut;
+import com.solsol.exam.demo.vo.Member;
+import com.solsol.exam.demo.vo.Reply;
 import com.solsol.exam.demo.vo.ResultData;
 
 @Service
@@ -19,5 +23,9 @@ public class ReplyService {
 		int id = replyRepository.getLastInsertId();
 
 		return ResultData.from("S-1", Ut.f("%d번 댓글이 생성되었습니다", id), "id", id);
+	}
+
+	public List<Reply> getForPrintReplies(Member actor, String relTypeCode, int relId) {
+		return replyRepository.getForPrintReplies(relTypeCode, relId);
 	}
 }
