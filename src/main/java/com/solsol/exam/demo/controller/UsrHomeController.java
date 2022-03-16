@@ -1,19 +1,14 @@
 package com.solsol.exam.demo.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.solsol.exam.demo.vo.Article;
+import com.solsol.exam.demo.vo.Rq;
 
 
 @Controller
 public class UsrHomeController {
+	
 	@RequestMapping("/usr/home/main")
 	
 	public String showMain() {
@@ -22,7 +17,7 @@ public class UsrHomeController {
 	
 	@RequestMapping("/")
 	
-	public String getRoot() {
+	public String showRoot() {
 		return "redirect:/usr/home/main";
 	}
 	
