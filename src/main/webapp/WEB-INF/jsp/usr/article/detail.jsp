@@ -3,6 +3,7 @@
 
 <c:set var="pageTitle" value="게시물 상세내용" />
 <%@ include file="../common/head.jspf"%>
+<%@ include file="../../common/toastUiEditorLib.jspf"%>
 
 <script>
 	const params = {};
@@ -117,7 +118,13 @@
           </tr>
           <tr>
             <th>내용</th>
-            <td>${ article.forPrintBody }</td>
+            <td>
+              <div class="toast-ui-viewer">
+                <script type="text/x-template">
+					${ article.body }	
+  				</script>
+              </div>
+            </td>
           </tr>
 
 
@@ -224,7 +231,7 @@
         <col width="50" />
         <col width="150" />
         <col />
-        
+
       </colgroup>
       <thead>
         <tr>
@@ -255,9 +262,7 @@
                   href="../reply/doDelete?id=${ reply.id }">삭제</a>
               </c:if>
             </td>
-            <td>
-              ${ reply.forPrintBody }
-            </td>
+            <td>${ reply.forPrintBody }</td>
 
           </tr>
 
